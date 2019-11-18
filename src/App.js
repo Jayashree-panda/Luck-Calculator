@@ -99,7 +99,7 @@ class App extends React.Component {
   }
 
   generateRandomNumbers(){
-    this.state.numberThree = Math.floor(Math.random() * 100)
+    this.setState({ numberThree:Math.floor(Math.random() * 100)})
     do {
         this.setState({numberOne:Math.floor(Math.random() * 100)})
       } while(this.state.numberOne === this.state.numberThree);
@@ -156,7 +156,7 @@ class App extends React.Component {
     }
     this.handleLastClick()
 }
-handleClickThree(){
+  handleClickThree(){
   this.setState({ toggleRandom:!this.state.toggleRandom })
   this.setState(prevState => ({
     numberOfAttempts: prevState.numberOfAttempts+1
@@ -173,13 +173,10 @@ handleClickThree(){
   this.handleLastClick()
 }
 
-handleNext(){
+  handleNext(){
       this.setState({ toggleRandom:!this.state.toggleRandom })
       this.generateRandomNumbers()
   }
-
-  
-
   render(){
     if(this.state.complete === true){
       if(this.state.luckyAttempts >= 0 && this.state.luckyAttempts <= 3){
@@ -220,7 +217,6 @@ handleNext(){
     </body>
     );
   }
-  
 }
 }
 
