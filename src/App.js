@@ -118,7 +118,7 @@ class App extends React.Component {
       this.setState({ luckyNumber : numbers[Math.floor(Math.random() * 3)] })
   }
   handleLastClick(){
-    if(this.state.numberOfAttempts=== 10){
+    if(this.state.numberOfAttempts=== 9){
       this.setState(prevState => ({
         complete: !this.state.complete
       }))
